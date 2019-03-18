@@ -1,7 +1,5 @@
 package com.apooboo.aspectdemo;
 
-import com.apooboo.aspectdemo.domain.Product;
-import com.apooboo.aspectdemo.security.CurrentUserHolder;
 import com.apooboo.aspectdemo.service.ProductService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,19 +15,8 @@ public class AspectDemoApplicationTests {
 	ProductService productService;
 
 	@Test
-	public void contextLoads() {
-	}
-
-	@Test(expected = Exception.class)
-	public void annoInsertTest(){
-		CurrentUserHolder.set("Tom");
-		productService.insert(new Product());
-	}
-
-	@Test
-	public void adminInsertTest(){
-		CurrentUserHolder.set("admin");
-		productService.insert(new Product());
+	public void test() {
+		productService.findById(1L);
 	}
 
 }
